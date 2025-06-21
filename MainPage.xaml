@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiFormularioValidado.ViewModels"
+             x:Class="MauiFormularioValidado.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:RegisterViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30" Spacing="10">
+
+        <Label Text="Formulario de Registro"
+           FontAttributes="Bold"
+           FontSize="22"
+           HorizontalOptions="Center" />
+
+        <!-- Nombre -->
+        <Entry Placeholder="Nombre"
+           Text="{Binding Nombre, Mode=TwoWay}" BackgroundColor="#F0F0F0" Margin="0,5" HeightRequest="40"   />
+        <Label Text="{Binding NombreError}" TextColor="Red"  FontSize="Small" />
+
+        <!-- Email -->
+        <Entry Placeholder="Correo electrónico"
+           Text="{Binding Email, Mode=TwoWay}" Keyboard="Email" BackgroundColor="#F0F0F0" Margin="0,5" HeightRequest="40"  />
+        <Label Text="{Binding EmailError}" TextColor="Red" FontSize="Small" />
+
+        <!-- Teléfono -->
+        <Entry Placeholder="Teléfono (8095551234)"
+           Text="{Binding Telefono, Mode=TwoWay}" Keyboard="Telephone" BackgroundColor="#F0F0F0" Margin="0,5" HeightRequest="40"  />
+        <Label Text="{Binding TelefonoError}" TextColor="Red" FontSize="Small" />
+
+        <!-- Contraseña -->
+        <Entry Placeholder="Contraseña"
+           Text="{Binding Password, Mode=TwoWay}"
+           IsPassword="True" BackgroundColor="#F0F0F0" Margin="0,5" HeightRequest="40"  />
+        <Label Text="{Binding PasswordError}" TextColor="Red" FontSize="Small" />
+
+        <!-- Confirmar contraseña -->
+        <Entry Placeholder="Confirmar contraseña"
+           Text="{Binding ConfirmarPassword, Mode=TwoWay}"
+           IsPassword="True" BackgroundColor="#F0F0F0" Margin="0,5" HeightRequest="40"  />
+        <Label Text="{Binding ConfirmarPasswordError}" TextColor="Red" FontSize="Small" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
